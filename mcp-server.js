@@ -38,7 +38,7 @@ function validateFilm(film) {
 
 function buildSampleFilm() {
   return {
-    format: 'VectorWebVideo/1',
+    format: 'ANM/1',
     meta: {
       title: 'VectorWebVideo sample',
       author: 'AI Agent',
@@ -96,7 +96,7 @@ class VectorWebVideoMCPServer {
         inputSchema: {
           type: 'object',
           properties: {
-            file: { type: 'string', description: 'Absolute or relative path to the .json file' }
+            file: { type: 'string', description: 'Absolute or relative path to the .anm file' }
           },
           required: ['file']
         },
@@ -126,7 +126,7 @@ class VectorWebVideoMCPServer {
             height: { type: 'number' }
           }
         },
-        handler: ({ src = './sample-film.json', autoplay = false, muted = true, width = 1280, height = 720 }) => ({
+        handler: ({ src = './sample-film.anm', autoplay = false, muted = true, width = 1280, height = 720 }) => ({
           html: `
 <div data-vwv="${src}" data-width="${width}" data-height="${height}" ${autoplay ? 'autoplay' : ''} ${muted ? 'muted' : ''}></div>
 <script src="./vectorwebvideo.js"></script>

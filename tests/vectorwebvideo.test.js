@@ -10,11 +10,26 @@ const demoDirectory = path.join(__dirname, '..', 'DEMO');
 const manifest = JSON.parse(fs.readFileSync(path.join(demoDirectory, 'manifest.json'), 'utf8'));
 
 test('all gallery films validate and match their declared durations', () => {
-  assert.equal(manifest.demos.length, 15);
+  assert.equal(manifest.demos.length, 16);
   for (const demo of manifest.demos) {
+    assert.equal(path.extname(demo.file), '.anm', demo.file);
     const film = JSON.parse(fs.readFileSync(path.join(demoDirectory, demo.file), 'utf8'));
     assert.deepEqual(validateFilm(film), { valid: true, errors: [] }, demo.file);
+    assert.equal(film.format, 'ANM/1', demo.file);
     assert.equal(film.meta.duration, demo.duration, demo.file);
+  }
+});
+
+test('standalone example uses the ANM/1 container extension', () => {
+  const sample = JSON.parse(fs.readFileSync(path.join(__dirname, '..', 'sample-film.anm'), 'utf8'));
+  assert.equal(sample.format, 'ANM/1');
+  assert.deepEqual(validateFilm(sample), { valid: true, errors: [] });
+});
+
+test('gallery contains direct HTML links to every example without JavaScript', () => {
+  const html = fs.readFileSync(path.join(demoDirectory, 'index.html'), 'utf8');
+  for (const demo of manifest.demos) {
+    assert.ok(html.includes(`href="./${demo.file}"`), `Missing static link for ${demo.file}`);
   }
 });
 

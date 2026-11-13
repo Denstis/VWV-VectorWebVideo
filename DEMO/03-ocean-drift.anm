@@ -1,13 +1,13 @@
 {
-  "format": "VectorWebVideo/1",
+  "format": "ANM/1",
   "meta": {
-    "title": "Космическая орбита",
+    "title": "Плавание по волнам",
     "author": "VectorWebVideo Demo",
     "fps": 30,
     "width": 1280,
     "height": 720,
     "duration": 8,
-    "background": "#020817"
+    "background": "#082f49"
   },
   "symbols": {
     "sun": {
@@ -28,7 +28,7 @@
                   120
                 ]
               ],
-              "fill": "#a78bfa"
+              "fill": "#cffafe"
             }
           ]
         },
@@ -170,7 +170,7 @@
   "scenes": [
     {
       "id": "main",
-      "name": "Путешествие в глубины",
+      "name": "Море и воздух",
       "start": 0,
       "end": 8,
       "layers": [
@@ -179,15 +179,15 @@
           "stops": [
             [
               0,
-              "#020817"
+              "#082f49"
             ],
             [
               0.55,
-              "#312e81"
+              "#0ea5e9"
             ],
             [
               1,
-              "#a78bfa"
+              "#cffafe"
             ]
           ]
         },
@@ -227,16 +227,16 @@
         },
         {
           "type": "text",
-          "text": "ORBITAL DREAM",
+          "text": "OCEAN DRIFT",
           "x": 640,
           "y": 360,
           "size": 70,
-          "fill": "#eef2ff",
+          "fill": "#ecfeff",
           "weight": 800
         },
         {
           "type": "text",
-          "text": "Космическая орбита",
+          "text": "Плавание по волнам",
           "x": 640,
           "y": 450,
           "size": 22,

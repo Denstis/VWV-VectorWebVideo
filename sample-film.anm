@@ -1,13 +1,13 @@
 {
-  "format": "VectorWebVideo/1",
+  "format": "ANM/1",
   "meta": {
-    "title": "Пустынный ветер",
-    "author": "VectorWebVideo Demo",
+    "title": "Sunrise demo",
+    "author": "Copilot",
     "fps": 30,
     "width": 1280,
     "height": 720,
     "duration": 8,
-    "background": "#431407"
+    "background": "#08101c"
   },
   "symbols": {
     "sun": {
@@ -24,11 +24,11 @@
                   "E",
                   0,
                   0,
-                  120,
-                  120
+                  110,
+                  110
                 ]
               ],
-              "fill": "#fef3c7"
+              "fill": "#fbbf24"
             }
           ]
         },
@@ -44,11 +44,11 @@
                   "E",
                   0,
                   0,
-                  170,
-                  170
+                  152,
+                  152
                 ]
               ],
-              "fill": "rgba(255,255,255,0.12)"
+              "fill": "rgba(251, 191, 36, 0.15)"
             }
           ]
         }
@@ -66,13 +66,13 @@
               "d": [
                 [
                   "E",
-                  -70,
+                  -60,
                   0,
-                  28,
+                  34,
                   18
                 ]
               ],
-              "fill": "rgba(255,255,255,0.38)"
+              "fill": "#dbeafe"
             },
             {
               "d": [
@@ -80,53 +80,29 @@
                   "E",
                   0,
                   -18,
-                  42,
-                  22
+                  44,
+                  24
                 ]
               ],
-              "fill": "rgba(255,255,255,0.38)"
+              "fill": "#dbeafe"
             },
             {
               "d": [
                 [
                   "E",
-                  74,
+                  62,
                   0,
                   32,
-                  18
+                  16
                 ]
               ],
-              "fill": "rgba(255,255,255,0.38)"
+              "fill": "#dbeafe"
             }
           ]
         }
       ]
     },
-    "ring": {
-      "parts": [
-        {
-          "pivot": [
-            0,
-            0
-          ],
-          "paths": [
-            {
-              "d": [
-                [
-                  "E",
-                  0,
-                  0,
-                  120,
-                  60
-                ]
-              ],
-              "fill": "rgba(255,255,255,0.08)"
-            }
-          ]
-        }
-      ]
-    },
-    "bgshape": {
+    "card": {
       "parts": [
         {
           "pivot": [
@@ -138,29 +114,29 @@
               "d": [
                 [
                   "M",
-                  -250,
-                  100
+                  -180,
+                  -70
                 ],
                 [
                   "L",
-                  250,
-                  100
+                  180,
+                  -70
                 ],
                 [
                   "L",
-                  250,
-                  260
+                  180,
+                  70
                 ],
                 [
                   "L",
-                  -250,
-                  260
+                  -180,
+                  70
                 ],
                 [
                   "Z"
                 ]
               ],
-              "fill": "rgba(255,255,255,0.06)"
+              "fill": "#1e293b"
             }
           ]
         }
@@ -169,8 +145,8 @@
   },
   "scenes": [
     {
-      "id": "main",
-      "name": "Жаркий день",
+      "id": "scene1",
+      "name": "Intro",
       "start": 0,
       "end": 8,
       "layers": [
@@ -179,69 +155,50 @@
           "stops": [
             [
               0,
-              "#431407"
+              "#08101c"
             ],
             [
-              0.55,
-              "#f59e0b"
+              0.6,
+              "#1d4ed8"
             ],
             [
               1,
-              "#fef3c7"
+              "#0ea5e9"
             ]
           ]
         },
         {
           "type": "symbol",
           "ref": "sun",
-          "x": 980,
-          "y": 170,
-          "scale": 1.1
+          "x": 970,
+          "y": 180
         },
         {
           "type": "symbol",
           "ref": "cloud",
           "x": 340,
-          "y": 160,
-          "scale": 1.1
+          "y": 150
         },
         {
           "type": "symbol",
           "ref": "cloud",
           "x": 760,
-          "y": 240,
-          "scale": 0.8
+          "y": 230,
+          "scale": 0.9
         },
         {
           "type": "symbol",
-          "ref": "ring",
+          "ref": "card",
           "x": 640,
-          "y": 540,
-          "scale": 1.4
-        },
-        {
-          "type": "symbol",
-          "ref": "bgshape",
-          "x": 640,
-          "y": 480
+          "y": 400
         },
         {
           "type": "text",
-          "text": "DESERT WIND",
+          "text": "VectorWebVideo",
           "x": 640,
-          "y": 360,
-          "size": 70,
-          "fill": "#fffbeb",
-          "weight": 800
-        },
-        {
-          "type": "text",
-          "text": "Пустынный ветер",
-          "x": 640,
-          "y": 450,
-          "size": 22,
-          "fill": "rgba(255,255,255,0.9)",
-          "weight": 600
+          "y": 410,
+          "size": 68,
+          "fill": "#f8fafc"
         }
       ]
     }

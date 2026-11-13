@@ -1,13 +1,13 @@
 {
-  "format": "VectorWebVideo/1",
+  "format": "ANM/1",
   "meta": {
-    "title": "Хэллоуинские огни",
+    "title": "Зимний снег",
     "author": "VectorWebVideo Demo",
     "fps": 30,
     "width": 1280,
     "height": 720,
     "duration": 8,
-    "background": "#0f172a"
+    "background": "#111827"
   },
   "symbols": {
     "sun": {
@@ -28,7 +28,7 @@
                   120
                 ]
               ],
-              "fill": "#facc15"
+              "fill": "#e0f2fe"
             }
           ]
         },
@@ -170,7 +170,7 @@
   "scenes": [
     {
       "id": "main",
-      "name": "Тыквы и ночь",
+      "name": "Морозный воздух",
       "start": 0,
       "end": 8,
       "layers": [
@@ -179,15 +179,15 @@
           "stops": [
             [
               0,
-              "#0f172a"
+              "#111827"
             ],
             [
               0.55,
-              "#f97316"
+              "#dbeafe"
             ],
             [
               1,
-              "#facc15"
+              "#e0f2fe"
             ]
           ]
         },
@@ -227,16 +227,16 @@
         },
         {
           "type": "text",
-          "text": "HALLOWEEN",
+          "text": "SNOW LIGHT",
           "x": 640,
           "y": 360,
           "size": 70,
-          "fill": "#fef3c7",
+          "fill": "#f0f9ff",
           "weight": 800
         },
         {
           "type": "text",
-          "text": "Хэллоуинские огни",
+          "text": "Зимний снег",
           "x": 640,
           "y": 450,
           "size": 22,

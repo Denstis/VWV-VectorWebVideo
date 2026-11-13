@@ -1,13 +1,13 @@
 {
-  "format": "VectorWebVideo/1",
+  "format": "ANM/1",
   "meta": {
-    "title": "Кибер-ночь",
+    "title": "Хэллоуинские огни",
     "author": "VectorWebVideo Demo",
     "fps": 30,
     "width": 1280,
     "height": 720,
     "duration": 8,
-    "background": "#020617"
+    "background": "#0f172a"
   },
   "symbols": {
     "sun": {
@@ -28,7 +28,7 @@
                   120
                 ]
               ],
-              "fill": "#22d3ee"
+              "fill": "#facc15"
             }
           ]
         },
@@ -170,7 +170,7 @@
   "scenes": [
     {
       "id": "main",
-      "name": "Неон и туман",
+      "name": "Тыквы и ночь",
       "start": 0,
       "end": 8,
       "layers": [
@@ -179,15 +179,15 @@
           "stops": [
             [
               0,
-              "#020617"
+              "#0f172a"
             ],
             [
               0.55,
-              "#111827"
+              "#f97316"
             ],
             [
               1,
-              "#22d3ee"
+              "#facc15"
             ]
           ]
         },
@@ -227,16 +227,16 @@
         },
         {
           "type": "text",
-          "text": "NEON NIGHT",
+          "text": "HALLOWEEN",
           "x": 640,
           "y": 360,
           "size": 70,
-          "fill": "#a5f3fc",
+          "fill": "#fef3c7",
           "weight": 800
         },
         {
           "type": "text",
-          "text": "Кибер-ночь",
+          "text": "Хэллоуинские огни",
           "x": 640,
           "y": 450,
           "size": 22,

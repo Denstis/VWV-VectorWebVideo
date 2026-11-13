@@ -1,17 +1,17 @@
 # VWV-VectorWebVideo
 
-Полный проект формата VectorWebVideo — векторной веб-анимации в JSON, проигрываемой через Canvas 2D.
+Полный проект формата ANM/1 — векторной веб-анимации в JSON-контейнере `.anm`, проигрываемой через Canvas 2D.
 
 ## Что реализовано
 
-- полноценный формат `VectorWebVideo/1` (совместим с `ANM/1`)
+- формат `ANM/1` в расширении `.anm`
 - библиотека рендера `vectorwebvideo.js`
-- загрузка фильма из JSON
+- загрузка фильма из `.anm` (UTF-8 JSON)
 - воспроизведение, пауза, перемотка и цикл
 - простые векторные объекты: `symbol`, `text`, `rect`, `sky`, `particles`
 - HTML-embed для вставки в страницу
 - MCP-сервер для AI-агентов
-- пример `sample-film.json`
+- пример `sample-film.anm`
 
 ## Запуск демо
 
@@ -28,7 +28,7 @@ python3 -m http.server 8000
 
 ## Галерея DEMO
 
-В [DEMO/](/workspaces/VWV-VectorWebVideo/DEMO) собрано 15 воспроизводимых роликов с длительностью от 8 до 30 секунд. Первые десять — короткие тематические этюды. Расширенные примеры показывают:
+В [DEMO/](./DEMO/) собрано 16 воспроизводимых фильмов в формате `ANM/1` с длительностью от 8 до 48 секунд. Первые десять — короткие тематические этюды. Расширенные примеры показывают:
 
 - несколько сцен, camera tracks, переходы `fade`, `dip`, `iris`, seek и loop
 - векторные команды `M/L/Q/C/E/Z`, штрихи, линейные и радиальные градиенты
@@ -40,11 +40,11 @@ python3 -m http.server 8000
 
 ## Формат
 
-Минимальный JSON:
+Файл `.anm` — это JSON в формате `ANM/1`:
 
 ```json
 {
-  "format": "VectorWebVideo/1",
+  "format": "ANM/1",
   "meta": {
     "title": "Demo",
     "fps": 30,
@@ -78,7 +78,7 @@ python3 -m http.server 8000
 ## HTML вставка
 
 ```html
-<div data-vwv="./sample-film.json" autoplay muted></div>
+<div data-vwv="./sample-film.anm" autoplay muted></div>
 <script src="./vectorwebvideo.js"></script>
 <script>
   if (window.VectorWebVideo && window.VectorWebVideo.mountAll) {
@@ -108,7 +108,7 @@ node mcp-server.js
 
 - `index.html` — визуальная демонстрация
 - `vectorwebvideo.js` — библиотека рендера и embed API
-- `sample-film.json` — пример фильма
+- `sample-film.anm` — пример фильма ANM/1
 - `mcp-server.js` — MCP-сервер для AI
-- [DEMO/](./DEMO/) — 15 демо-роликов разных жанров и длительности
+- [DEMO/](./DEMO/) — 16 демо-фильмов `.anm` разных жанров и длительности
 - `plan.md` — исходная концепция и дизайн

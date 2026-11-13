@@ -1,13 +1,13 @@
 {
-  "format": "VectorWebVideo/1",
+  "format": "ANM/1",
   "meta": {
-    "title": "Лесная тайна",
+    "title": "Космическая орбита",
     "author": "VectorWebVideo Demo",
     "fps": 30,
     "width": 1280,
     "height": 720,
     "duration": 8,
-    "background": "#052e16"
+    "background": "#020817"
   },
   "symbols": {
     "sun": {
@@ -28,7 +28,7 @@
                   120
                 ]
               ],
-              "fill": "#bbf7d0"
+              "fill": "#a78bfa"
             }
           ]
         },
@@ -170,7 +170,7 @@
   "scenes": [
     {
       "id": "main",
-      "name": "Зелёная тишина",
+      "name": "Путешествие в глубины",
       "start": 0,
       "end": 8,
       "layers": [
@@ -179,15 +179,15 @@
           "stops": [
             [
               0,
-              "#052e16"
+              "#020817"
             ],
             [
               0.55,
-              "#16a34a"
+              "#312e81"
             ],
             [
               1,
-              "#bbf7d0"
+              "#a78bfa"
             ]
           ]
         },
@@ -227,16 +227,16 @@
         },
         {
           "type": "text",
-          "text": "MYSTIC WOODS",
+          "text": "ORBITAL DREAM",
           "x": 640,
           "y": 360,
           "size": 70,
-          "fill": "#dcfce7",
+          "fill": "#eef2ff",
           "weight": 800
         },
         {
           "type": "text",
-          "text": "Лесная тайна",
+          "text": "Космическая орбита",
           "x": 640,
           "y": 450,
           "size": 22,

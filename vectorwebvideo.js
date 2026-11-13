@@ -122,7 +122,7 @@
 
   function createDefaultFilm() {
     return {
-      format: 'VectorWebVideo/1',
+      format: 'ANM/1',
       meta: {
         title: 'VectorWebVideo demo',
         author: 'AI',
@@ -698,7 +698,7 @@
     const height = options.height || 720;
     const autoplay = options.autoplay ? ' autoplay' : '';
     const muted = options.muted ? ' muted' : '';
-    const src = options.src || './sample-film.json';
+    const src = options.src || './sample-film.anm';
     return `
 <div id="${id}" class="vectorwebvideo-player" data-vwv="${src}" data-width="${width}" data-height="${height}"${autoplay}${muted}></div>
 <script src="./vectorwebvideo.js"></script>

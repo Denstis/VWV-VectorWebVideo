@@ -1,13 +1,13 @@
 {
-  "format": "VectorWebVideo/1",
+  "format": "ANM/1",
   "meta": {
-    "title": "Горный закат",
+    "title": "Неоновые капли",
     "author": "VectorWebVideo Demo",
     "fps": 30,
     "width": 1280,
     "height": 720,
     "duration": 8,
-    "background": "#3b0764"
+    "background": "#111827"
   },
   "symbols": {
     "sun": {
@@ -28,7 +28,7 @@
                   120
                 ]
               ],
-              "fill": "#fef08a"
+              "fill": "#f472b6"
             }
           ]
         },
@@ -170,7 +170,7 @@
   "scenes": [
     {
       "id": "main",
-      "name": "Тёплые пики",
+      "name": "Улицы в ливне",
       "start": 0,
       "end": 8,
       "layers": [
@@ -179,15 +179,15 @@
           "stops": [
             [
               0,
-              "#3b0764"
+              "#111827"
             ],
             [
               0.55,
-              "#f97316"
+              "#7c3aed"
             ],
             [
               1,
-              "#fef08a"
+              "#f472b6"
             ]
           ]
         },
@@ -227,16 +227,16 @@
         },
         {
           "type": "text",
-          "text": "SUNSET PEAK",
+          "text": "RAIN GLOW",
           "x": 640,
           "y": 360,
           "size": 70,
-          "fill": "#fff7ed",
+          "fill": "#fdf2f8",
           "weight": 800
         },
         {
           "type": "text",
-          "text": "Горный закат",
+          "text": "Неоновые капли",
           "x": 640,
           "y": 450,
           "size": 22,

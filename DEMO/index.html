@@ -23,7 +23,7 @@
     #scene { color: #a7b0ce; font-size: 13px; }
     h2 { margin: 34px 0 14px; font-size: 22px; }
     #gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 13px; }
-    .card { padding: 15px; border: 1px solid #282b49; border-radius: 12px; background: #101329d9; cursor: pointer; transition: border-color .15s, transform .15s; }
+    .card { display: block; width: 100%; padding: 15px; border: 1px solid #282b49; border-radius: 12px; background: #101329d9; color: inherit; font: inherit; text-align: left; text-decoration: none; cursor: pointer; transition: border-color .15s, transform .15s; }
     .card:hover, .card[aria-current="true"] { border-color: #a78bfa; transform: translateY(-2px); }
     .card h3 { margin: 0 0 5px; font-size: 16px; }
     .card p { margin: 0 0 10px; color: #9da6c3; font-size: 13px; }
@@ -35,7 +35,7 @@
 <body>
   <main>
     <h1>VectorWebVideo — демо</h1>
-    <p class="intro">15 фильмов от коротких цветовых этюдов до 30-секундных мультсцен. Расширенные примеры показывают всю реализованную матрицу плеера: векторные пути и заливки, ключи и easing, loop-треки, камеру, переходы, частицы и Web Audio.</p>
+    <p class="intro">16 фильмов от коротких цветовых этюдов до 48-секундной истории. Расширенные примеры показывают всю реализованную матрицу плеера: векторные пути и заливки, ключи и easing, loop-треки, камеру, переходы, частицы и Web Audio.</p>
     <section class="player" aria-label="Видеоплеер">
       <canvas id="screen" width="1280" height="720"></canvas>
       <div class="toolbar">
@@ -48,7 +48,24 @@
       </div>
     </section>
     <h2>Выберите ролик</h2>
-    <section id="gallery" aria-live="polite"></section>
+    <section id="gallery" aria-live="polite">
+      <a class="card" href="./01-sunrise-city.anm" target="_blank" rel="noopener"><h3>Рассвет над городом</h3><p>8 секунд · ANM/1</p><span class="tags"><span class="tag">небо</span><span class="tag">градиенты</span></span></a>
+      <a class="card" href="./02-cyber-night.anm" target="_blank" rel="noopener"><h3>Кибер-ночь</h3><p>8 секунд · ANM/1</p><span class="tags"><span class="tag">неон</span><span class="tag">цвет</span></span></a>
+      <a class="card" href="./03-ocean-drift.anm" target="_blank" rel="noopener"><h3>Плавание по волнам</h3><p>8 секунд · ANM/1</p><span class="tags"><span class="tag">океан</span><span class="tag">цвет</span></span></a>
+      <a class="card" href="./04-forest-mystic.anm" target="_blank" rel="noopener"><h3>Лесная тайна</h3><p>8 секунд · ANM/1</p><span class="tags"><span class="tag">лес</span><span class="tag">природа</span></span></a>
+      <a class="card" href="./05-desert-wind.anm" target="_blank" rel="noopener"><h3>Пустынный ветер</h3><p>8 секунд · ANM/1</p><span class="tags"><span class="tag">пустыня</span><span class="tag">цвет</span></span></a>
+      <a class="card" href="./06-neon-rain.anm" target="_blank" rel="noopener"><h3>Неоновые капли</h3><p>8 секунд · ANM/1</p><span class="tags"><span class="tag">город</span><span class="tag">неон</span></span></a>
+      <a class="card" href="./07-mountain-sunset.anm" target="_blank" rel="noopener"><h3>Горный закат</h3><p>8 секунд · ANM/1</p><span class="tags"><span class="tag">горы</span><span class="tag">закат</span></span></a>
+      <a class="card" href="./08-winter-snow.anm" target="_blank" rel="noopener"><h3>Зимний снег</h3><p>8 секунд · ANM/1</p><span class="tags"><span class="tag">зима</span><span class="tag">снег</span></span></a>
+      <a class="card" href="./09-halloween-lights.anm" target="_blank" rel="noopener"><h3>Хэллоуинские огни</h3><p>8 секунд · ANM/1</p><span class="tags"><span class="tag">праздник</span><span class="tag">ночь</span></span></a>
+      <a class="card" href="./10-space-orbit.anm" target="_blank" rel="noopener"><h3>Космическая орбита</h3><p>8 секунд · ANM/1</p><span class="tags"><span class="tag">космос</span><span class="tag">орбита</span></span></a>
+      <a class="card" href="./11-cinematic-story.anm" target="_blank" rel="noopener"><h3>Skyline: три акта</h3><p>24 секунды · ANM/1</p><span class="tags"><span class="tag">камера</span><span class="tag">переходы</span><span class="tag">звук</span></span></a>
+      <a class="card" href="./12-particle-garden.anm" target="_blank" rel="noopener"><h3>Сад из света</h3><p>18 секунд · ANM/1</p><span class="tags"><span class="tag">частицы</span><span class="tag">анимация</span></span></a>
+      <a class="card" href="./13-vector-shapes.anm" target="_blank" rel="noopener"><h3>Мастерская форм</h3><p>20 секунд · ANM/1</p><span class="tags"><span class="tag">векторные пути</span><span class="tag">easing</span></span></a>
+      <a class="card" href="./14-product-launch.anm" target="_blank" rel="noopener"><h3>Пульс продукта</h3><p>16 секунд · ANM/1</p><span class="tags"><span class="tag">текст</span><span class="tag">частицы</span></span></a>
+      <a class="card" href="./15-orbit-soundscape.anm" target="_blank" rel="noopener"><h3>Орбитальный сон</h3><p>30 секунд · ANM/1</p><span class="tags"><span class="tag">космос</span><span class="tag">камера</span><span class="tag">звук</span></span></a>
+      <a class="card" href="./daybreak.anm" target="_blank" rel="noopener"><h3>夜明け — Рассвет над крышей</h3><p>48 секунд · ANM/1</p><span class="tags"><span class="tag">4 сцены</span><span class="tag">полный пример формата</span></span></a>
+    </section>
   </main>
   <script src="../vectorwebvideo.js"></script>
   <script>
@@ -80,7 +97,7 @@
       const message = document.createElement('p');
       message.className = 'error';
       message.textContent = `Не удалось загрузить демонстрации: ${error.message}`;
-      gallery.replaceChildren(message);
+      gallery.prepend(message);
     }
 
     async function selectDemo(index) {
@@ -150,6 +167,7 @@
       .then((manifest) => {
         demos = manifest.demos;
         const gallery = document.getElementById('gallery');
+        gallery.replaceChildren();
         demos.forEach((demo, index) => gallery.appendChild(makeCard(demo, index)));
         return selectDemo(0);
       })

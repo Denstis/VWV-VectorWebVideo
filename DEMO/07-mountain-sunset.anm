@@ -1,13 +1,13 @@
 {
-  "format": "VectorWebVideo/1",
+  "format": "ANM/1",
   "meta": {
-    "title": "Плавание по волнам",
+    "title": "Горный закат",
     "author": "VectorWebVideo Demo",
     "fps": 30,
     "width": 1280,
     "height": 720,
     "duration": 8,
-    "background": "#082f49"
+    "background": "#3b0764"
   },
   "symbols": {
     "sun": {
@@ -28,7 +28,7 @@
                   120
                 ]
               ],
-              "fill": "#cffafe"
+              "fill": "#fef08a"
             }
           ]
         },
@@ -170,7 +170,7 @@
   "scenes": [
     {
       "id": "main",
-      "name": "Море и воздух",
+      "name": "Тёплые пики",
       "start": 0,
       "end": 8,
       "layers": [
@@ -179,15 +179,15 @@
           "stops": [
             [
               0,
-              "#082f49"
+              "#3b0764"
             ],
             [
               0.55,
-              "#0ea5e9"
+              "#f97316"
             ],
             [
               1,
-              "#cffafe"
+              "#fef08a"
             ]
           ]
         },
@@ -227,16 +227,16 @@
         },
         {
           "type": "text",
-          "text": "OCEAN DRIFT",
+          "text": "SUNSET PEAK",
           "x": 640,
           "y": 360,
           "size": 70,
-          "fill": "#ecfeff",
+          "fill": "#fff7ed",
           "weight": 800
         },
         {
           "type": "text",
-          "text": "Плавание по волнам",
+          "text": "Горный закат",
           "x": 640,
           "y": 450,
           "size": 22,

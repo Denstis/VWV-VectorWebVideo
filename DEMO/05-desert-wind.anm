@@ -1,13 +1,13 @@
 {
-  "format": "VectorWebVideo/1",
+  "format": "ANM/1",
   "meta": {
-    "title": "Зимний снег",
+    "title": "Пустынный ветер",
     "author": "VectorWebVideo Demo",
     "fps": 30,
     "width": 1280,
     "height": 720,
     "duration": 8,
-    "background": "#111827"
+    "background": "#431407"
   },
   "symbols": {
     "sun": {
@@ -28,7 +28,7 @@
                   120
                 ]
               ],
-              "fill": "#e0f2fe"
+              "fill": "#fef3c7"
             }
           ]
         },
@@ -170,7 +170,7 @@
   "scenes": [
     {
       "id": "main",
-      "name": "Морозный воздух",
+      "name": "Жаркий день",
       "start": 0,
       "end": 8,
       "layers": [
@@ -179,15 +179,15 @@
           "stops": [
             [
               0,
-              "#111827"
+              "#431407"
             ],
             [
               0.55,
-              "#dbeafe"
+              "#f59e0b"
             ],
             [
               1,
-              "#e0f2fe"
+              "#fef3c7"
             ]
           ]
         },
@@ -227,16 +227,16 @@
         },
         {
           "type": "text",
-          "text": "SNOW LIGHT",
+          "text": "DESERT WIND",
           "x": 640,
           "y": 360,
           "size": 70,
-          "fill": "#f0f9ff",
+          "fill": "#fffbeb",
           "weight": 800
         },
         {
           "type": "text",
-          "text": "Зимний снег",
+          "text": "Пустынный ветер",
           "x": 640,
           "y": 450,
           "size": 22,
