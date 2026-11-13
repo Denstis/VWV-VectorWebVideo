@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>VectorWebVideo embed example</title>
+    <style>
+      body {
+        margin: 0;
+        min-height: 100vh;
+        display: grid;
+        place-items: center;
+        background: #020817;
+        color: white;
+        font-family: system-ui, sans-serif;
+      }
+      .frame {
+        width: min(90vw, 960px);
+        border-radius: 16px;
+        overflow: hidden;
+        box-shadow: 0 20px 60px rgba(0,0,0,0.35);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="frame">
+      <div data-vwv="../sample-film.json" data-width="1280" data-height="720" autoplay muted></div>
+    </div>
+
+    <script src="../vectorwebvideo.js"></script>
+    <script>
+      if (window.VectorWebVideo && window.VectorWebVideo.mountAll) {
+        window.VectorWebVideo.mountAll();
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,50 @@
+{
+  "format": "VectorWebVideo/1",
+  "meta": {
+    "title": "Sunrise demo",
+    "author": "Copilot",
+    "fps": 30,
+    "width": 1280,
+    "height": 720,
+    "duration": 8,
+    "background": "#08101c"
+  },
+  "symbols": {
+    "sun": {
+      "parts": [
+        { "pivot": [0, 0], "paths": [{ "d": [["E", 0, 0, 110, 110]], "fill": "#fbbf24" }] },
+        { "pivot": [0, 0], "paths": [{ "d": [["E", 0, 0, 152, 152]], "fill": "rgba(251, 191, 36, 0.15)" }] }
+      ]
+    },
+    "cloud": {
+      "parts": [
+        { "pivot": [0, 0], "paths": [
+          { "d": [["E", -60, 0, 34, 18]], "fill": "#dbeafe" },
+          { "d": [["E", 0, -18, 44, 24]], "fill": "#dbeafe" },
+          { "d": [["E", 62, 0, 32, 16]], "fill": "#dbeafe" }
+        ] }
+      ]
+    },
+    "card": {
+      "parts": [
+        { "pivot": [0, 0], "paths": [{ "d": [["M", -180, -70], ["L", 180, -70], ["L", 180, 70], ["L", -180, 70], ["Z"]], "fill": "#1e293b" }] }
+      ]
+    }
+  },
+  "scenes": [
+    {
+      "id": "scene1",
+      "name": "Intro",
+      "start": 0,
+      "end": 8,
+      "layers": [
+        { "type": "sky", "stops": [[0, "#08101c"], [0.6, "#1d4ed8"], [1, "#0ea5e9"]] },
+        { "type": "symbol", "ref": "sun", "x": 970, "y": 180 },
+        { "type": "symbol", "ref": "cloud", "x": 340, "y": 150 },
+        { "type": "symbol", "ref": "cloud", "x": 760, "y": 230, "scale": 0.9 },
+        { "type": "symbol", "ref": "card", "x": 640, "y": 400 },
+        { "type": "text", "text": "VectorWebVideo", "x": 640, "y": 410, "size": 68, "fill": "#f8fafc" }
+      ]
+    }
+  ]
+}

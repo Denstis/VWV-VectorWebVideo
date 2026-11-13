@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <title>VectorWebVideo — демонстрации формата</title>
+  <style>
+    :root { color-scheme: dark; font-family: system-ui, sans-serif; background: #070a16; color: #eef2ff; }
+    * { box-sizing: border-box; }
+    body { margin: 0; min-height: 100vh; background: radial-gradient(ellipse at 15% 0, #24194b 0, transparent 40%), #070a16; }
+    main { width: min(1200px, 100% - 32px); margin: 0 auto; padding: 38px 0 64px; }
+    h1 { margin: 0; font-size: clamp(30px, 5vw, 48px); letter-spacing: -.04em; }
+    .intro { color: #a7b0ce; margin: 8px 0 26px; }
+    .player { overflow: hidden; border: 1px solid #343456; border-radius: 16px; background: #030611; box-shadow: 0 28px 80px #02030a99; }
+    #screen { display: block; width: 100%; height: auto; }
+    .toolbar { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; padding: 12px; background: #111328; }
+    button, input[type="range"] { accent-color: #a78bfa; }
+    button { border: 1px solid #46466c; border-radius: 9px; background: #1b1c38; color: #f3f4ff; padding: 9px 13px; font: inherit; cursor: pointer; }
+    button:hover { border-color: #a78bfa; }
+    #seek { flex: 1 1 180px; min-width: 150px; }
+    #clock { font: 13px ui-monospace, monospace; color: #c4b5fd; white-space: nowrap; }
+    #scene { color: #a7b0ce; font-size: 13px; }
+    h2 { margin: 34px 0 14px; font-size: 22px; }
+    #gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 13px; }
+    .card { padding: 15px; border: 1px solid #282b49; border-radius: 12px; background: #101329d9; cursor: pointer; transition: border-color .15s, transform .15s; }
+    .card:hover, .card[aria-current="true"] { border-color: #a78bfa; transform: translateY(-2px); }
+    .card h3 { margin: 0 0 5px; font-size: 16px; }
+    .card p { margin: 0 0 10px; color: #9da6c3; font-size: 13px; }
+    .tags { display: flex; gap: 5px; flex-wrap: wrap; }
+    .tag { color: #c4b5fd; background: #282448; border-radius: 20px; padding: 3px 8px; font-size: 11px; }
+    .error { color: #fecaca; padding: 12px; border: 1px solid #7f1d1d; border-radius: 9px; }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>VectorWebVideo — демо</h1>
+    <p class="intro">15 фильмов от коротких цветовых этюдов до 30-секундных мультсцен. Расширенные примеры показывают всю реализованную матрицу плеера: векторные пути и заливки, ключи и easing, loop-треки, камеру, переходы, частицы и Web Audio.</p>
+    <section class="player" aria-label="Видеоплеер">
+      <canvas id="screen" width="1280" height="720"></canvas>
+      <div class="toolbar">
+        <button id="play" type="button">▶ Воспроизвести</button>
+        <button id="pause" type="button">Ⅱ Пауза</button>
+        <button id="sound" type="button" aria-pressed="false">♫ Звук выкл.</button>
+        <input id="seek" type="range" min="0" max="1" step="0.01" value="0" aria-label="Перемотка">
+        <span id="clock">00:00 / 00:00</span>
+        <span id="scene">Выберите пример</span>
+      </div>
+    </section>
+    <h2>Выберите ролик</h2>
+    <section id="gallery" aria-live="polite"></section>
+  </main>
+  <script src="../vectorwebvideo.js"></script>
+  <script>
+    const canvas = document.getElementById('screen');
+    const seek = document.getElementById('seek');
+    const clock = document.getElementById('clock');
+    const sceneLabel = document.getElementById('scene');
+    const soundButton = document.getElementById('sound');
+    const player = new window.VectorWebVideo({ canvas, loop: true, muted: true });
+    let demos = [];
+    let currentIndex = -1;
+    let seeking = false;
+
+    function formatTime(seconds) {
+      const whole = Math.floor(seconds || 0);
+      return String(Math.floor(whole / 60)).padStart(2, '0') + ':' + String(whole % 60).padStart(2, '0');
+    }
+
+    function updateStatus({ time, scene }) {
+      if (currentIndex < 0 || seeking) return;
+      seek.max = String(player.getDuration());
+      seek.value = String(time);
+      clock.textContent = `${formatTime(time)} / ${formatTime(player.getDuration())}`;
+      sceneLabel.textContent = scene.name || scene.id;
+    }
+
+    function showError(error) {
+      const gallery = document.getElementById('gallery');
+      const message = document.createElement('p');
+      message.className = 'error';
+      message.textContent = `Не удалось загрузить демонстрации: ${error.message}`;
+      gallery.replaceChildren(message);
+    }
+
+    async function selectDemo(index) {
+      const demo = demos[index];
+      if (!demo) return;
+      currentIndex = index;
+      player.pause();
+      try {
+        const response = await fetch(`./${encodeURIComponent(demo.file)}`);
+        if (!response.ok) throw new Error(`${demo.file}: HTTP ${response.status}`);
+        const film = await response.json();
+        player.loadFilm(film);
+        player.loop = true;
+        player.onFrame = updateStatus;
+        player.seek(0);
+        player.play();
+        document.querySelectorAll('.card').forEach((card, cardIndex) => {
+          card.setAttribute('aria-current', String(cardIndex === index));
+        });
+      } catch (error) {
+        showError(error);
+      }
+    }
+
+    function makeCard(demo, index) {
+      const card = document.createElement('button');
+      card.type = 'button';
+      card.className = 'card';
+      card.setAttribute('aria-current', 'false');
+      const title = document.createElement('h3');
+      title.textContent = demo.title;
+      const details = document.createElement('p');
+      details.textContent = `${demo.duration} секунд · ${demo.file}`;
+      const tags = document.createElement('span');
+      tags.className = 'tags';
+      demo.tags.forEach((value) => {
+        const tag = document.createElement('span');
+        tag.className = 'tag';
+        tag.textContent = value;
+        tags.appendChild(tag);
+      });
+      card.append(title, details, tags);
+      card.addEventListener('click', () => selectDemo(index));
+      return card;
+    }
+
+    document.getElementById('play').addEventListener('click', () => player.play());
+    document.getElementById('pause').addEventListener('click', () => player.pause());
+    soundButton.addEventListener('click', () => {
+      const muted = soundButton.getAttribute('aria-pressed') === 'true';
+      player.setMuted(muted);
+      soundButton.setAttribute('aria-pressed', String(!muted));
+      soundButton.textContent = muted ? '♫ Звук выкл.' : '♫ Звук вкл.';
+    });
+    seek.addEventListener('input', () => {
+      seeking = true;
+      clock.textContent = `${formatTime(Number(seek.value))} / ${formatTime(player.getDuration())}`;
+      player.seek(Number(seek.value));
+    });
+    seek.addEventListener('change', () => { seeking = false; });
+
+    fetch('./manifest.json')
+      .then((response) => {
+        if (!response.ok) throw new Error(`manifest.json: HTTP ${response.status}`);
+        return response.json();
+      })
+      .then((manifest) => {
+        demos = manifest.demos;
+        const gallery = document.getElementById('gallery');
+        demos.forEach((demo, index) => gallery.appendChild(makeCard(demo, index)));
+        return selectDemo(0);
+      })
+      .catch(showError);
+  </script>
+</body>
+</html>

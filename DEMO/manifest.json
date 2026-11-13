@@ -1,0 +1,19 @@
+{
+  "demos": [
+    { "file": "01-sunrise-city.json", "title": "Рассвет над городом", "duration": 8, "tags": ["небо", "градиенты"] },
+    { "file": "02-cyber-night.json", "title": "Кибер-ночь", "duration": 8, "tags": ["неон", "цвет"] },
+    { "file": "03-ocean-drift.json", "title": "Плавание по волнам", "duration": 8, "tags": ["океан", "цвет"] },
+    { "file": "04-forest-mystic.json", "title": "Лесная тайна", "duration": 8, "tags": ["лес", "природа"] },
+    { "file": "05-desert-wind.json", "title": "Пустынный ветер", "duration": 8, "tags": ["пустыня", "цвет"] },
+    { "file": "06-neon-rain.json", "title": "Неоновые капли", "duration": 8, "tags": ["город", "неон"] },
+    { "file": "07-mountain-sunset.json", "title": "Горный закат", "duration": 8, "tags": ["горы", "закат"] },
+    { "file": "08-winter-snow.json", "title": "Зимний снег", "duration": 8, "tags": ["зима", "снег"] },
+    { "file": "09-halloween-lights.json", "title": "Хэллоуинские огни", "duration": 8, "tags": ["праздник", "ночь"] },
+    { "file": "10-space-orbit.json", "title": "Космическая орбита", "duration": 8, "tags": ["космос", "орбита"] },
+    { "file": "11-cinematic-story.json", "title": "Skyline: три акта", "duration": 24, "tags": ["сцены", "камера", "iris", "dip", "soundtrack"] },
+    { "file": "12-particle-garden.json", "title": "Сад из света", "duration": 18, "tags": ["частицы", "sway", "blend", "loop"] },
+    { "file": "13-vector-shapes.json", "title": "Мастерская форм", "duration": 20, "tags": ["M/L/Q/C/E/Z", "градиенты", "easing"] },
+    { "file": "14-product-launch.json", "title": "Пульс продукта", "duration": 16, "tags": ["text", "scale", "dip", "частицы"] },
+    { "file": "15-orbit-soundscape.json", "title": "Орбитальный сон", "duration": 30, "tags": ["3 сцены", "камера", "частицы", "звук"] }
+  ]
+}

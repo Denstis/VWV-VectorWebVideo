@@ -1,0 +1,15 @@
+{
+  "name": "vwv-vectorwebvideo",
+  "version": "1.0.0",
+  "private": true,
+  "description": "VectorWebVideo format, renderer, embed snippet and MCP server for AI agents.",
+  "bin": {
+    "vectorwebvideo-mcp": "./mcp-server.js"
+  },
+  "scripts": {
+    "start": "python3 -m http.server 8000",
+    "dev": "python3 -m http.server 8000",
+    "mcp": "node mcp-server.js",
+    "test": "node --test"
+  }
+}
