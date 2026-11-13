@@ -97,3 +97,10 @@ test('invalid scene intervals return actionable validation errors', () => {
   assert.equal(result.valid, false);
   assert.match(result.errors.join(' '), /valid start and end time/);
 });
+
+test('end cards remain hidden until playback completes in both player copies', () => {
+  for (const file of ['index.html', 'plan.md']) {
+    const source = fs.readFileSync(path.join(__dirname, '..', file), 'utf8');
+    assert.match(source, /\.end-card\[hidden\]\s*\{\s*display:\s*none\s*\}/, file);
+  }
+});

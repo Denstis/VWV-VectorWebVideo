@@ -73,6 +73,7 @@ canvas#screen{display:block;width:100%;height:auto}
 .play-big svg{width:34px;height:34px;margin-left:5px}
 .poster .p-hint{font-size:12.5px;color:var(--muted)}
 .end-card{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px;background:rgba(12,9,24,.78);backdrop-filter:blur(4px)}
+.end-card[hidden]{display:none}
 .end-card h3{font-family:var(--jp);font-size:52px;color:var(--pink2)}
 .end-card .row{display:flex;gap:10px}
 .drop-hint{position:absolute;inset:0;display:none;align-items:center;justify-content:center;background:rgba(20,16,38,.85);border:3px dashed var(--teal);border-radius:4px;font-family:var(--disp);font-weight:700;font-size:20px;color:var(--teal);z-index:5}
